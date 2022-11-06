@@ -1,14 +1,25 @@
 const birthDate = document.querySelector("#birth-date");
 const luckyNumber = document.querySelector("#lucky-number");
-
 const checkButton = document.querySelector("#check-button");
-
 const outputPara = document.querySelector("#output-para");
 
 function compareInputs(sum, luckyNumber)
 {
+   if (luckyNumber <= 0 )  {
+     outputPara.innerText = "Please enter positive value for Lucky Number. It must be > 0";
+    return;
+   
+    }
+   
+   if (String(luckyNumber) === " ") {
+    outputPara.innerText = "Please enter lucky number. This field cannot be empty.";
+    return;
+
+}
+   
     if (sum % luckyNumber === 0){
-    outputPara.innerText = "hurray your birthday is lucky 🚀";
+    
+        outputPara.innerText = "hurray your birthday is lucky 🚀";
 } else{
     outputPara.innerText = "your birthday is not so lucky 🤔" ;
 }
